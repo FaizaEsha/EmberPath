@@ -1,0 +1,69 @@
+{
+  "name": "emberpath",
+  "version": "1.0.0",
+  "description": "A visual studio for AI decision workflows.",
+  "scripts": {
+    "dev": "next dev --webpack --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "inngest": "inngest-cli dev --host 127.0.0.1 --persist -u http://127.0.0.1:3000/api/inngest",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "test:integration": "tsx tests/integration.ts",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaizaEsha/EmberPath.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/FaizaEsha/EmberPath/issues"
+  },
+  "homepage": "https://github.com/FaizaEsha/EmberPath#readme",
+  "dependencies": {
+    "@fontsource/dm-sans": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@radix-ui/react-dialog": "^1.3.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@xyflow/react": "^12.12.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "inngest": "^4.26.1",
+    "lucide-react": "^1.64.0",
+    "next": "^16.4.3",
+    "openai": "^7.45.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "inngest-cli": "^1.49.0",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "overrides": {
+    "inngest": {
+      "zod": "^4.6.7"
+    },
+    "inngest-cli": {
+      "adm-zip": "^0.6.1"
+    }
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "allowScripts": {
+    "inngest-cli": true,
+    "esbuild": true,
+    "protobufjs": true
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "Customer request triage",
+  "startNodeId": "request",
+  "nodes": [
+    {
+      "id": "request",
+      "type": "decision",
+      "position": {
+        "x": 60,
+        "y": 190
+      },
+      "data": {
+        "label": "Support request?",
+        "prompt": "Is this message asking for customer support with an existing order, account, or product?",
+        "demoAnswer": "YES"
+      }
+    },
+    {
+      "id": "delivery",
+      "type": "decision",
+      "position": {
+        "x": 420,
+        "y": 65
+      },
+      "data": {
+        "label": "Delivery issue?",
+        "prompt": "Is the customer reporting a missing, late, or undelivered order?",
+        "demoAnswer": "YES"
+      }
+    },
+    {
+      "id": "sales",
+      "type": "decision",
+      "position": {
+        "x": 420,
+        "y": 370
+      },
+      "data": {
+        "label": "Sales enquiry?",
+        "prompt": "Is the customer interested in buying a product or asking about pricing?",
+        "demoAnswer": "YES"
+      }
+    },
+    {
+      "id": "priority",
+      "type": "decision",
+      "position": {
+        "x": 780,
+        "y": 65
+      },
+      "data": {
+        "label": "Needs priority care?",
+        "prompt": "Does the message describe an overdue delivery or an urgent problem that requires priority attention?",
+        "demoAnswer": "YES"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "request-yes",
+      "source": "request",
+      "target": "delivery",
+      "sourceHandle": "YES"
+    },
+    {
+      "id": "request-no",
+      "source": "request",
+      "target": "sales",
+      "sourceHandle": "NO"
+    },
+    {
+      "id": "delivery-yes",
+      "source": "delivery",
+      "target": "priority",
+      "sourceHandle": "YES"
+    }
+  ]
+}
