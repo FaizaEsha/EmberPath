@@ -1,0 +1,7 @@
+node_modules
+.next
+.data
+.inngest
+bin
+package-lock.json
+AGENTS.md
